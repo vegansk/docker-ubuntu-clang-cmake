@@ -27,6 +27,10 @@ RUN apt-get install -y openjdk-8-jdk maven
 
 RUN export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
+RUN apt-get install -y llvm-6.0 llvm-6.0-tools llvm-6.0-runtime
+
+RUN ln -s /usr/bin/llvm-symbolizer-6.0 /usr/bin/llvm-symbolizer
+
 ENV PATH="/usr/bin/cmake/bin:${PATH}"
 
 ENV CC=/usr/bin/clang-6.0
