@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-
+     
 MAINTAINER Anatoly Galiulin <galiulin.anatoly@gmail.com>
 
 RUN apt-get update
@@ -33,6 +33,4 @@ RUN ln -s /usr/bin/llvm-symbolizer-6.0 /usr/bin/llvm-symbolizer
 
 ENV PATH="/usr/bin/cmake/bin:${PATH}"
 
-ENV CC=/usr/bin/clang-6.0
-
-ENV CXX=/usr/bin/clang++-6.0
+RUN apt-get install -y g++-5
